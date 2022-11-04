@@ -3,6 +3,11 @@ import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import netlifyAuth from '../netlifyAuth.js'
 
 
@@ -30,32 +35,32 @@ export default function Home() {
 
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Head>
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"/>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
       </Head>
 
       <main>
-        <Header text={'Welcome to the Public Space™'} />
-        <p className="description">
-          We are in a public space, for the people who aren't able to access the super fancy
-          members-only area. You hear snobbish laughter in the distance.
-        </p>
+        <Header/>
         {loggedIn ? (
-          <div>
-            You're logged in! Please do visit{' '}
-            <Link href="/protected">
-              <a>the special, members-only space.</a>
-            </Link>
+          <div className="shinyContainer">
+            <iframe src="https://gallery.shinyapps.io/airmass/" className="iframeStyles"/>
           </div>
-        ) : (
-          <button onClick={login}>Log in here to access the members-only area.</button>
+          ) : (
+          <div>
+            <div>
+              Please log in!
+            </div>
+            <div>
+              <button onClick={login}>Log in here to access the members-only area.</button>
+            </div>
+          </div>
         )}
       </main>
-
       <Footer />
     </div>
   )
