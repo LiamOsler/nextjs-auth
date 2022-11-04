@@ -1,3 +1,55 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+  .display-5{
+    font-size: 2rem;
+  }
+  .text{
+    font-size: 1rem;
+  }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  .display-5{
+    font-size: 4rem;
+  }
+  .text{
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  .display-5{
+    font-size: 6rem;
+  }
+  .text{
+    font-size: 2rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+  .display-5{
+    font-size: 8rem;
+  }
+  .text{
+    font-size: 2rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  .display-5{
+    font-size: 10rem;
+  }
+  .text{
+    font-size: 2rem;
+  }
+}
+
+
 html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
@@ -5,7 +57,6 @@ body {
   margin: 0;
   padding: 0;
   }
-
 * {
   box-sizing: border-box;
 }
@@ -17,6 +68,8 @@ body {
 .navbar{
   padding-left: 1em;
   padding-right: 1em;
+  background: linear-gradient(45deg,  #0F1E25, #23d5ab);
+  background-size: 400% 400%;
 }
 
 .row{
@@ -25,7 +78,7 @@ body {
 
 .shinyContainer{
   width: 100%;
-  height: 100vh;
+  height: 1200px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -33,7 +86,7 @@ body {
 
 .iframeStyles{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   border: none;
 }
 
@@ -42,5 +95,77 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
+}
+
+
+.jumbotron{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+
+}
+
+.background-image{
+  position: absolute;
+  z-index : 0;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.30);
+}
+
+#bg-1{
+  background-image: url("https://pbs.twimg.com/media/FK-_Xb-WYAArPfo?format=jpg&name=4096x4096");
+}
+
+#bg-2{
+  background: linear-gradient(45deg,  #0F1E25, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+#bg-3{
+  background-image: url("https://corp.smartbrief.com/wp-content/uploads/2022/04/jason-goodman-0K7GgiA8lVE-unsplash-scaled.jpg");
+}
+
+#bg-5{
+  background-image: url("https://img.freepik.com/foto-gratis/hermosa-mujer-negocios-mujer-hermosa-joven-alegre-que-trabaja-computadora-portatil-que-mira-camara-sonrisa-mientras-sentado-su-lugar-trabajo_425904-16595.jpg?w=2000");
+}
+
+
+#bg-4{
+  background: linear-gradient(-45deg,  #0F1E25, #c023d5);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.foreground-content{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+
+.jumbotron-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 1em;
 }
 
