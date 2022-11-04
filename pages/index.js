@@ -51,14 +51,13 @@ export default function Home() {
             <iframe src="https://gallery.shinyapps.io/airmass/" className="iframeStyles"/>
           </div>
           ) : (
-          <div>
             <div>
-              Please log in!
+              <div className="row">
+                <div className="col login-prompt">            
+                    <button onClick={login}>Login here to access the members-only area.</button>
+                </div>
+              </div>
             </div>
-            <div>
-              <button onClick={login}>Log in here to access the members-only area.</button>
-            </div>
-          </div>
         )}
       </main>
       <Footer />
