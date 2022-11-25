@@ -87,7 +87,7 @@ export default function Home() {
               <div className="foreground-content">
                 <div className="container p-5 text-light">
                   <h1 className="display-5 fw-bold">STOCKVISION</h1>
-                  <p className="col-md-4 text">STOCKVISION uses the most advanced machine learning technologies to provide you with accurate stock market predictions</p>
+                  <p className="col-md-4 text">STOCKVISION uses the machine learning technologies to provide you with accurate stock market predictions</p>
                   <button className="btn btn-light btn-lg mt-4" type="button" onClick={login}>Join now</button>
                 </div>
               </div>
