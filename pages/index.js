@@ -66,10 +66,7 @@ export default function Home() {
 
         {loggedIn ? (
           <div className="shinyContainer">
-            <div className="title">
-              {}
-            </div>
-            <iframe src="https://liamosler.ca/shinylive_test" className="iframeStyles"/>
+            <iframe src="https://cerulean-torrone-d04ff7.netlify.app/?me=hello" className="iframeStyles"/>
           </div>
           ) : (
           <div>
