@@ -9,16 +9,21 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import netlifyAuth from '../netlifyAuth.js'
+import netlifyIdentity from 'netlify-identity-widget';
+
 
 
 export default function Home() {
   let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated)
+  let [user, setUser] = useState(null); 
+  const baseURL = 'https://cerulean-torrone-d04ff7.netlify.app/';
 
   useEffect(() => {
     let isCurrent = true
     netlifyAuth.initialize((user) => {
       if (isCurrent) {
         setLoggedIn(!!user)
+        setUser(netlifyIdentity.currentUser())
       }
     })
 
@@ -66,8 +71,13 @@ export default function Home() {
 
         {loggedIn ? (
           <div className="shinyContainer">
-            <iframe src="https://cerulean-torrone-d04ff7.netlify.app/?me=hello" className="iframeStyles"/>
-          </div>
+            <h1>Logged in!</h1>
+            <p>Username:</p>
+            <p>{JSON.stringify(user)}</p>
+            <p>Your Name: {user.user_metadata.full_name}</p>
+            <p>Your Email: {user.email}</p>
+            <iframe src={baseURL + "?email=" + user.email}  className="iframeStyles"></iframe>
+            </div>
           ) : (
           <div>
             <div className="bg-light jumbotron">
