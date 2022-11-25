@@ -66,7 +66,10 @@ export default function Home() {
 
         {loggedIn ? (
           <div className="shinyContainer">
-            <iframe src="https://gallery.shinyapps.io/airmass/" className="iframeStyles"/>
+            <div className="title">
+              {}
+            </div>
+            <iframe src="https://liamosler.ca/shinylive_test" className="iframeStyles"/>
           </div>
           ) : (
           <div>
