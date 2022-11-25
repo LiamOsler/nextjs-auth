@@ -72,6 +72,7 @@ export default function Home() {
         {loggedIn ? (
           <div className="shinyContainer">
             <h1>Logged in!</h1>
+            <a className="btn btn-primary btn-lg mt-4" href = {baseURL + "?email=" + user.email}>Access Dashboard</a>
             <p>Username:</p>
             <p>{JSON.stringify(user)}</p>
             <p>Your Name: {user.user_metadata.full_name}</p>
